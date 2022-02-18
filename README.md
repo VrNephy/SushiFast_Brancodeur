@@ -16,7 +16,7 @@ C’est un projet de deuxième année de BTS SIO SLAM donné par Monsieur Chamil
 
 Brancodeurs 1 : Alexandre Alleaume et Lucas Pisano
 
-Etroite collaboration avec l’équipe Brancodeurs 2 composé de Yannick Midey et Bryan Guillot.
+Etroite collaboration avec l’équipe Brancodeurs 2 composée de Yannick Midey et Bryan Guillot.
 
  
 ![img](https://media.discordapp.net/attachments/917717231801098260/920295278328815646/1-removebg-preview.png)
@@ -107,15 +107,15 @@ Après avoir testé que tout s’est bien déroulé, on essaie de lancer le serv
 
  
 
-Ensuite, nous allons créer plusieurs composant via la commande : ng g c « nom du composant »
+Ensuite, nous allons créer plusieurs composants via la commande : ng g c « nom du composant »
 
 Il y a donc le composant :boxs, footer, header, home, panier et rgpd.
 
 <h1>Développement</h1>
 
-Nous allons suivre une structure simple. Je vais d'abord vous présenter la vue html puis dans un second temps le backend (typescript lié a la vue en question). Le typescript contient des commentaires pour plus d'explications. Il est vivement recommandé de les lire.
+Nous allons suivre une structure simple. Je vais d'abord vous présenter la vue html puis dans un second temps le backend (typescript lié à la vue en question). Le typescript contient des commentaires pour plus d'explications. Il est vivement recommandé de les lire.
 
-L'application est liée a une api contenant les "plateaux" ou "boxes".
+L'application est liée à une api contenant les "plateaux" ou "boxes".
 
 Lien API
 ```TypeScript
@@ -149,11 +149,11 @@ const urlrest = 'http://localhost:3000';
 export class CrudService {
   constructor(private http: HttpClient) { }
 
-  //contient tout ce que le client ajoute a son panier de la commande
+  //contient tout ce que le client ajoute à son panier de la commande
   public panierItemList: any = [];
   public boxList = new BehaviorSubject<any>([]);
 
-  //historique des commandes, a chaque commande passer on ajoute sont prix dans l'historique
+  //historique des commandes, à chaque commande passée on ajoute son prix dans l'historique
   histoData: any = JSON.parse(localStorage.getItem('Historique') || '[]')
 
   bol_to_remove_one = false
@@ -175,11 +175,11 @@ export class CrudService {
   }
 ```
 
-L'opérateur arrive d'abord sur la page d'accueil du site, le "home.component". Il n'y à pas grand chose sur cette page mis à part le header qui permet d'accéder aux autres pages, le footer qui permet d'accéder au RGPD ainsi qu'une bannière avec un slogan.
+L'opérateur arrive d'abord sur la page d'accueil du site, le "home.component". Il n'y a pas grand chose sur cette page mis à part le header qui permet d'accéder aux autres pages, le footer qui permet d'accéder au RGPD ainsi qu'une bannière avec un slogan.
 ![img](https://media.discordapp.net/attachments/415449138747146250/943086884714848296/uihome.PNG)
 
 Si l'opérateur veut prendre commande, il peut cliquer sur le bouton "Menu" du header, ce qui le redirigera sur une page présentant les différents plateaux qui sont proposés. L'opérateur peut cliquer sur "read more" afin d'en savoir plus sur chaque plateau. En effet, en cliquant sur "read more" un modal apparaît et donne la composition du plateau. Il y a également un bouton fermer ainsi qu'un bouton pour ajouter le plateau au panier. Le panier est à gauche de la page, ce qui permet de voir en temps réel le total de la commande et de facilement supprimer un plateau en trop par exemple.
-voici a quoi ressemble le html permettant d'afficher les différents plateaux
+voici à quoi ressemble le html permettant d'afficher les différents plateaux
 
 
 
@@ -192,7 +192,7 @@ Ici, à l'aide d'une boucle ngFor, on affiche les "box" avec une image, un nom, 
 ![img](https://cdn.discordapp.com/attachments/415449138747146250/944252057232228352/unknown.png)
 
 
-concernant l'affichage des boxes, on utilise la fonction fetchbox qui ressemble a ceci:
+concernant l'affichage des boxes, on utilise la fonction fetchbox qui ressemble à ceci:
 
 ```TypeScript
 //récupère tous les menus depuis le crudService
@@ -204,10 +204,10 @@ concernant l'affichage des boxes, on utilise la fonction fetchbox qui ressemble 
 ```
 
 
-Le modal du plateau "Amateur Mix"resemble à ceci. On affiche L'image du menu en question, son prix, sa composition, ses saveurs, un bouton pour ajouter le menu en question en panier et enfin, un bouton pour fermer le modal et revenir au autres menus.
+Le modal du plateau "Amateur Mix"resemble à ceci. On affiche L'image du menu en question, son prix, sa composition, ses saveurs, un bouton pour ajouter le menu en question au panier et enfin, un bouton pour fermer le modal et revenir aux autres menus.
 ![img](https://media.discordapp.net/attachments/415449138747146250/943087401255972864/modalui.PNG)
 
-Voici a quoi ressemble la fonction permettant d'afficher le modal pour chaque box.
+Voici à quoi ressemble la fonction permettant d'afficher le modal pour chaque box.
 ```TypeScript
   //fonction d'affichage de la fenêtre de détails
   affModal(i: number) {
@@ -221,12 +221,12 @@ Voici a quoi ressemble la fonction permettant d'afficher le modal pour chaque bo
 
 ```
 
-Enfin concernant le panier affiché sur la gauche, a l'aide d'une boucle ngFor, on affiche l'image, le nom et le prix des plateaux ajoutés. Le prix total est par la suite calculé et affiché. Un bouton supprimer apparaît pour chaque plateau et le bouton payer tout en bas afin de finaliser la commande. Une fois finalisée, la commande est ajoutée à l'historique des commandes.
+Enfin concernant le panier affiché sur la gauche, à l'aide d'une boucle ngFor, on affiche l'image, le nom et le prix des plateaux ajoutés. Le prix total est par la suite calculé et affiché. Un bouton supprimer apparaît pour chaque plateau et le bouton payer tout en bas afin de finaliser la commande. Une fois finalisée, la commande est ajoutée à l'historique des commandes.
 
 Les fonctions utilisées pour le panier sont 
 
 ```Typescript
-  //ajout d'un menu a la commande
+  //ajout d'un menu à la commande
   addtocart(boxe: any) {
     this.crudService.addtoCart(boxe);
     this.box = []
@@ -251,9 +251,9 @@ Les fonctions utilisées pour le panier sont
   }
 ```
 
-Maintenant dans "historique-commande.component". Ce component a pour but de répertorier les commandes effectuées par l'opérateur. En effet, une fois la commande passée, l'opérateur peut consulter l'historique qui affiche l'ID, la date, le prix total ainsi que le statut (si oui ou non la commande fût bien payée).
+Maintenant dans "historique-commande.component". Ce component a pour but de répertorier les commandes effectuées par l'opérateur. En effet, une fois la commande passée, l'opérateur peut consulter l'historique qui affiche l'ID, la date, le prix total ainsi que le statut (si oui ou non la commande est bien payée).
 
-Voici a quoi ressemble le code concernant l'historique.
+Voici à quoi ressemble le code concernant l'historique.
 ![img](https://media.discordapp.net/attachments/415449138747146250/943086884073132062/historyui.PNG?width=1381&height=670)
 ```TypeScript
   //variablec qui stocke l'historique
@@ -280,7 +280,7 @@ Voici a quoi ressemble le code concernant l'historique.
 
 ```
 
-Dans le box.component lors du paiement de la commande, cette dernière est ajoutée a l'historique grâce à la fonction "addToHistorique".
+Dans le box.component lors du paiement de la commande, cette dernière est ajoutée à l'historique grâce à la fonction "addToHistorique".
 ```TypeScript
 //ajout de la commande a l'historique
   addToHistorique() {
@@ -300,7 +300,7 @@ Dans le box.component lors du paiement de la commande, cette dernière est ajout
       localStorage.setItem('Historique', tabItems);
       alert("Payement effectué avec succès, bonne appétit 🍽")
     } else {
-      alert("Veuillez choissir un plat avant de commander !!! ")
+      alert("Veuillez choisir un plat avant de commander !!! ")
     }
   }
 ```
@@ -342,7 +342,7 @@ Lors d'un achat, l'opérateur ne fait pas tout payer. Ce qui résulte en une per
 
 En tant qu'opérateur malveillant, un client achète 1 box de sushis et je lui en donne 2.
 
-En tant que développeur, je peut mettre en place un système d'identification. Ainsi chaque commande est retrouvable et peut être utilisé pour remonter jusqu'a l'opérateur malveillant.
+En tant que développeur, je peux mettre en place un système d'identification. Ainsi chaque commande est retrouvable et peut être utilisée pour remonter jusqu'à l'opérateur malveillant.
 
 identification d'employé (Code d'identification d'employé) dans le localstorage.
 
@@ -351,7 +351,7 @@ A l'inverse, lors d'un achat, l'opérateur peut faire payer plus que nécessaire
 
 En tant qu'opérateur malveillant, un client achète 1 box de sushi mais je fais payer le prix de 2.
 
-En tant que développeur, je peut mettre en place un système d'identification. Ainsi chaque commande est retrouvable et peut etre utiliser pour remonter jusqu'a l'opérateur malveillant.
+En tant que développeur, je peux mettre en place un système d'identification. Ainsi chaque commande est retrouvable et peut être utilisée pour remonter jusqu'à l'opérateur malveillant.
 
 identification d'employé (Code d'identification d'employé) dans le localstorage.
 
@@ -361,4 +361,4 @@ Un client peut accéder à la borne/l'application qui est normalement uniquement
 
 En tant qu'opérateur malveillant, un client crée sa propre commande et ne paie pas.
 
-En tant que développeur, je met un place un système d'identification avec un mot de passe, code ou badge qui déverrouille la borne où l'application est accessible.
+En tant que développeur, je mets un place un système d'identification avec un mot de passe, code ou badge qui déverrouille la borne où l'application est accessible.
