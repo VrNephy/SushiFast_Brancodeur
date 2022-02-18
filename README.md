@@ -187,7 +187,7 @@ voici a quoi ressemble le html permettant d'afficher les différents plateaux
 
 
 
-Ici, a l'aide d'une boucle ngFor, on affiche les "box" avec une image, un nom, le nombre de pièces ainsi que son prix. Le boutton "Readmore" fait appel à la fonction "affModal()" ce qui comme son nom l'indique affiche le modal propre au plateau sélectionné.
+Ici, à l'aide d'une boucle ngFor, on affiche les "box" avec une image, un nom, le nombre de pièces ainsi que son prix. Le boutton "Readmore" fait appel à la fonction "affModal()" ce qui comme son nom l'indique affiche le modal propre au plateau sélectionné.
 
 ![img](https://cdn.discordapp.com/attachments/415449138747146250/944252057232228352/unknown.png)
 
@@ -337,28 +337,28 @@ Enfin, voici la page RGPD mais cette fois en ligne comme demandé.
 
 <h1>Evil-User Story</h1>
 
-<h2>opérateur malveillant</h2>
-Lors d'un achat, l'opérateur de fait pas tout payer. Ce qui résulte en une perte de revenu pour l'entreprise.
+<h2>Opérateur malveillant</h2>
+Lors d'un achat, l'opérateur ne fait pas tout payer. Ce qui résulte en une perte de revenu pour l'entreprise.
 
 En tant qu'opérateur malveillant, un client achète 1 box de sushis et je lui en donne 2.
 
-En tant que développeur, je peut mettre en place un système d'identification. Ainsi chaque commande est retrouveable et peut etre utiliser pour remonter jusqu'a l'opérateur malveillant.
+En tant que développeur, je peut mettre en place un système d'identification. Ainsi chaque commande est retrouvable et peut être utilisé pour remonter jusqu'a l'opérateur malveillant.
 
-identification d'employé (Code d'identification d'employée) dans le localstorage.
+identification d'employé (Code d'identification d'employé) dans le localstorage.
 
-<h2>opérateur malveillant</h2>
-A l'inverse, lors d'un achat, l'opérateur peut faire payer plus que nécessaire. Ce qui résulte en un grain d'argent pour l'entreprise.
+<h2>Opérateur malveillant</h2>
+A l'inverse, lors d'un achat, l'opérateur peut faire payer plus que nécessaire. Ce qui résulte en un gain d'argent pour l'entreprise.
 
 En tant qu'opérateur malveillant, un client achète 1 box de sushi mais je fais payer le prix de 2.
 
-En tant que développeur, je peut mettre en place un système d'identification. Ainsi chaque commande est retrouveable et peut etre utiliser pour remonter jusqu'a l'opérateur malveillant.
+En tant que développeur, je peut mettre en place un système d'identification. Ainsi chaque commande est retrouvable et peut etre utiliser pour remonter jusqu'a l'opérateur malveillant.
 
-identification d'employé (Code d'identification d'employée) dans le localstorage.
+identification d'employé (Code d'identification d'employé) dans le localstorage.
 
 <h2>Opérateur Client</h2>
 
 Un client peut accéder à la borne/l'application qui est normalement uniquement accessible par l'opérateur.
 
-En tant qu'opérateur malveillant, un client créer sa propre commande et ne paie pas.
+En tant qu'opérateur malveillant, un client crée sa propre commande et ne paie pas.
 
-En tant que développeur, je met un place un système d'identification avec un mot de passe, code ou badge qui dévérouille la borde ou l'application est acessible.
+En tant que développeur, je met un place un système d'identification avec un mot de passe, code ou badge qui déverrouille la borne où l'application est accessible.
